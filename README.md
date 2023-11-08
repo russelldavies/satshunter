@@ -25,3 +25,13 @@ Make sure you enclose the words in quotes so they can be parsed properly.
 
 By default, the first 10 addresses are searched. If you want to change this pass
 the `--depth` argument.
+
+If an ordering of the words matches the supplied address, the seed phrase will be printed.
+On success, the return code is 0, otherwise 1. You can integrate this into some reporting like
+so:
+
+```
+satshunter --words $WORDS --address $ADDRESS && notify 'success' || notify 'nothing found'
+```
+
+Replace `notify` with whatever notification system you want to use.
